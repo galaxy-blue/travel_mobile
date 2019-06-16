@@ -93,9 +93,10 @@ export default {
         }
         pages[page].push(val);
       });
-      return pages;
+      console.log(pages);
+      return pages
     }
-  },
+  }
 }
 </script>
 
@@ -115,16 +116,13 @@ export default {
   height: 3.8rem;
 }
 .mint-swipe{
-  width: 7.5rem;
+  width: 100%;
   height: 3.7rem;
 }
 .icon_wrap{
-  overflow: hidden;
-  width: 25%;
-  height:0;
-  padding-bottom: 25%;
-  text-align: center;
   float: left;
+  width: 25%;
+  height:1.5rem;
 }
 .img_wrap{
   width:1.1rem;
@@ -137,5 +135,6 @@ export default {
 }
 .info_mark{
   font-size: .28rem;
+  text-align: center;
 }
 </style>
