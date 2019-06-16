@@ -109,6 +109,7 @@ export default {
 .guess{
   color:#212121;
   font-size: .32rem;
+  margin-left: .1rem;
 }
 .rec_con{
   width: 100%;
