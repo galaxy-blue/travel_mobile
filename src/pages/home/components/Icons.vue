@@ -112,6 +112,7 @@ export default {
   background: rgba(0,175,190,.8);
 }
 .index_icons{
+  background: #fff;
   width: 100%;
   height: 3.8rem;
 }

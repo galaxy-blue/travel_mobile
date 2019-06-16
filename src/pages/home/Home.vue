@@ -25,6 +25,7 @@ export default {
 
 <style scoped>
 .home{
-  overflow: scroll; /* overflow:auto; */
+  width: 100%;
+  background: #f5f5f5;
 }
 </style>
