@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import home from '@/pages/home/Home'
+import list from '@/pages/list/List'
 
 Vue.use(Router)
 
@@ -10,6 +11,12 @@ export default new Router({
       path: '/',
       name: 'home',
       component: home
+    },
+    {
+      path: '/list',
+      name: 'list',
+      component: list
     }
+
   ]
 })

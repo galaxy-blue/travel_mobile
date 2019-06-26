@@ -5,8 +5,6 @@
   <home-icons></home-icons>
   <home-hotlist></home-hotlist>
   <home-recommend></home-recommend>
-
-
 </div>
 </template>
 
