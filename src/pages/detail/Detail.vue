@@ -32,7 +32,7 @@ export default {
   methods:{
     handleDetail () {
       //this.$axios.get('/api/detail.json?id='+this.$route.params.id)
-      this.$axios.get('/api/detail.json',{
+      this.$axios.get('/api/detail.php',{
         params:{
           id:this.$route.params.id
         }

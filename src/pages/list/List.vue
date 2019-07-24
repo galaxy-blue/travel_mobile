@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     handleCities () {
-      this.$axios.get('/api/city.json').then((res)=>{
+      this.$axios.get('/api/city.php').then((res)=>{
         console.log(res);
         this.hotCities = res.data.hotCitys;
         this.cities = res.data.cities;

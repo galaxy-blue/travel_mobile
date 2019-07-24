@@ -12,9 +12,11 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api':{
-        target:'http://localhost:8080',
-        pathRewrite: {
-          '^/api':'/static/mock'
+        target: 'http://vue.hxiuli.com',  //源地址
+        changeOrigin: true,  //是否跨域,改变源
+        secure: false,
+        pathRewrite: {       //重写地址
+          '^/api':'/api'
         }
       }
     },
