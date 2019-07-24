@@ -1,15 +1,15 @@
 <template>
   <div class="list_header">
-    <i class="back" @click="back"></i>
+    <i class="back" @click="toback"></i>
     <h3 class="title">城市选择</h3>
   </div>
 </template>
 
 <script>
 export default {
-  name:'list_header',
+  name:'listHeader',
   methods:{
-    back(){
+    toback(){
       this.$router.push({
         path:'/'
       });

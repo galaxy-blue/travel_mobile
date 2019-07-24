@@ -93,7 +93,7 @@ export default {
         }
         pages[page].push(val);
       });
-      console.log(pages);
+      //console.log(pages);
       return pages
     }
   }

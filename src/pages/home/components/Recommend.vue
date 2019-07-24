@@ -5,7 +5,7 @@
       <span class="guess">猜你喜欢</span>
     </div>
     <ul class="rec_con">
-      <li class="list_con" v-for="item in recom_data" :key="item.id">
+      <router-link class="list_con" v-for="item in recom_data" :key="item.id" :to="'./detail/'+item.id" tag="li">
         <div class="content_mas">
           <div class="img_wrap">
             <img class="img_rec" :src="item.urlImg" alt="">
@@ -27,7 +27,7 @@
           </div>
         </div>
         <div class="comment">{{item.comment}}</div>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>
@@ -36,7 +36,7 @@
 import recommend from '@/assets/images/recommend01.png'
 export default {
   name:'recommend',
-  data(){
+  data () {
     return{
       recom_data:[
         {

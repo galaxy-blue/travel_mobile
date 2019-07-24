@@ -7,7 +7,7 @@
       <span class="title">输入城市/景点/游玩主题</span>
     </div>
     <div class="city_now_box">
-      <span class="city_now" @click="list">石家庄</span>
+      <span class="city_now" @click="list">{{this.$store.state.city}}</span>
       <i class="drop_arrow"></i>
     </div>
   </div>

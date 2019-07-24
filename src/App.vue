@@ -1,16 +1,24 @@
 <template>
   <div id="app">
-
     <router-view/>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  // 使用watch 监听$router的变化,
+  watch: {
+    '$route': function(to,from){
+　    document.body.scrollTop = 0
+      document.documentElement.scrollTop = 0
+    }
+  }
 }
 </script>
 
 <style>
-
+#app{
+  touch-action: pan-y;
+}
 </style>

@@ -2,10 +2,9 @@
   <div class="list">
     <div class="list_wrap">
       <list-header></list-header>
-      <list-search></list-search>
+      <list-search :cities="this.cities"></list-search>
     </div>
-
-    <list-city></list-city>
+    <list-city :hotCities="this.hotCities" :cities="this.cities"></list-city>
   </div>
 </template>
 
@@ -19,8 +18,27 @@ export default {
     ListHeader,
     ListSearch,
     ListCity
+  },
+  data () {
+    return {
+      hotCities:{},
+      cities:{}
+    }
+  },
+  mounted () {
+  this.handleCities()
+  },
+  methods: {
+    handleCities () {
+      this.$axios.get('/api/city.json').then((res)=>{
+        console.log(res);
+        this.hotCities = res.data.hotCitys;
+        this.cities = res.data.cities;
+      })
+    }
   }
 };
+
 </script>
 
 <style scoped>
