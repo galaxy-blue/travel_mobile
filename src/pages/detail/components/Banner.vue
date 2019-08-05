@@ -7,18 +7,16 @@
       <div class="describe">
         <span class="spot">故宫(AAAAA景区)</span>
         <span class="count">
-          <i class="img_lit"></i>8
+          <i class="img_lit"></i>2
         </span>
       </div>
     </div>
-    <banner-gallery v-show="isShow" @close="changeClose" :imgCont="imgs"></banner-gallery>  <!-- 一般会在这里传值 -->
+    <banner-gallery v-show="isShow" :imgCont="imgs" :show="this.isShow" @close="handleHidden(show)"></banner-gallery>  <!-- 一般会在这里传值 -->
   </div>
-
 </template>
 
 <script>
 import BannerGallery from "../../../common/gallery/Gallery"
-import DetailHeader from './Header'
 import imgs1 from "@/assets/images/gallery02.png"
 import imgs2 from "@/assets/images/gallery01.png"
 export default {
@@ -36,9 +34,9 @@ export default {
     change_display() {
       this.isShow = true;
     },
-    changeClose(){
-      console.log(11);
-      this.isShow = false;
+    handleHidden (show) {
+      this.isShow = show;
+      console.log(this.isShow);
     }
   },
   components: {
@@ -91,9 +89,12 @@ export default {
 }
 .img_lit {
   display: inline-block;
-  width: 0.24rem;
+  width: 0.32rem;
   height: 0.32rem;
-  background: #ccc;
-  margin: 0.04rem 0.1rem 0 0;
+  background: url('../../../assets/images/picture.png');
+  vertical-align:middle;
+  margin-right: .2rem;
+  position:relative;
+  bottom:2px;
 }
 </style>

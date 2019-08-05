@@ -4,69 +4,29 @@
     <i class="hot"></i>
     <span class="title">本周热门榜单</span>
   </div>
- <ul class="hot_con_wrap">
-   <li class="hot_con">
-     <div class="img_wrap">
-       <img src="../../../assets/images/hotlist01.png" alt="" class="img_inner">
-     </div>
-     <div class="text">
-       <span class="spot del">故宫</span>
-       <span class="price del">
-         <em class="stress">￥60</em>起
-       </span>
-     </div>
-   </li>
-   <li class="hot_con">
-     <div class="img_wrap">
-       <img src="../../../assets/images/hotlist01.png" alt="" class="img_inner">
-     </div>
-     <div class="text">
-       <span class="spot del">故宫</span>
-       <span class="price del">
-         <em class="stress">￥60</em>起
-       </span>
-     </div>
-   </li>
-   <li class="hot_con">
-     <div class="img_wrap">
-       <img src="../../../assets/images/hotlist01.png" alt="" class="img_inner">
-     </div>
-     <div class="text">
-       <span class="spot del">故宫</span>
-       <span class="price del">
-         <em class="stress">￥60</em>起
-       </span>
-     </div>
-   </li>
-   <li class="hot_con">
-     <div class="img_wrap">
-       <img src="../../../assets/images/hotlist01.png" alt="" class="img_inner">
-     </div>
-     <div class="text">
-       <span class="spot del">故宫</span>
-       <span class="price del">
-         <em class="stress">￥60</em>起
-       </span>
-     </div>
-   </li>
-   <li class="hot_con">
-     <div class="img_wrap">
-       <img src="../../../assets/images/hotlist01.png" alt="" class="img_inner">
-     </div>
-     <div class="text">
-       <span class="spot del">故宫</span>
-       <span class="price del">
-         <em class="stress">￥60</em>起
-       </span>
-     </div>
-   </li>
- </ul>
+  <div class="ulWrap">
+    <ul class="hot_con_wrap" >
+      <li class="hot_con" v-for="item in hotList" :key="item.id">
+        <div class="img_wrap">
+          <img :src="item.img" alt="" class="img_inner">
+        </div>
+        <div class="text">
+          <span class="spot del">{{item.name}}</span>
+          <span class="price del">
+            <em class="stress">￥{{item.price}}</em>起
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
 </div>
 </template>
 
 <script>
 export default {
-  name:'hotList'
+  name:'hotList',
+  props:['hotList']
 }
 </script>
 
@@ -81,9 +41,9 @@ export default {
 }
 .hot{
   display: inline-block;
-  width: .3rem;
-  height: .3rem;
-  background:#ccc;
+  width: .32rem;
+  height: .32rem;
+  background: url('../../../assets/images/hot.png');
 }
 .title{
   font-size: .32rem;
@@ -91,6 +51,10 @@ export default {
   height: .44rem;
   line-height: .44rem;
   margin-left: .1rem;
+}
+.ulWrap{
+  width: 100%;
+  overflow: hidden;
 }
 .hot_con_wrap{
   overflow-x: scroll;

@@ -8,13 +8,14 @@ export default new Vuex.Store({
     city:'北京'   //公用数据
   },
   actions:{
-    changeCity (ctx,cname) {  //changeCity是派发的action
-      ctx.commit('changeCitySec',cname)
+    changeCity (context,payload) {  //changeCity是派发的action
+      context.commit('changeCitySec', payload)
     }
   },
   mutations:{
-    changeCitySec (state,cname) {
-      state.city = cname
+    changeCitySec(state, payload) {
+      state.city = payload
     }
   }
 })
+

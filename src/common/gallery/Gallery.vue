@@ -12,12 +12,14 @@
 export default {
   name:'gallery',
   methods:{
-    no_show(){
-      this.bus.$emit('close');
-      console.log(22);
+    no_show () {
+      this.show = false;
+      console.log(this.show);
+      this.bus.$emit('close',this.show);
     }
   },
-  props:{
+  props:['imgCont','show']
+  /* props:{
     imgCont:{
       type:Array,
       default(){
@@ -27,21 +29,20 @@ export default {
         ]
       }
     }
-  }
-  /* props:['imgCont'] */
+  } */
 }
 </script>
 
 <style scoped>
-.gallery>>>.mint-swipe-items-wrap{
+.gallery >>> .mint-swipe-items-wrap{
   display:flex;
   align-items: center;
 }
-.gallery>>>.mint-swipe-indicator{
+.gallery >>> .mint-swipe-indicator{
   background: #555;
   opacity: .8;
 }
-.gallery>>>.mint-swipe-indicator.is-active{
+.gallery >>> .mint-swipe-indicator.is-active{
   background: #fff;
 }
 .gallery{

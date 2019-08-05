@@ -30,7 +30,7 @@
     props:["hotCities","cities"],
     data () {
       return {
-        isPosit: false,
+        isPosit: false
       };
     },
     mounted() {
@@ -45,7 +45,7 @@
         }
       },
       handleCity (name) {
-        //console.log(name);
+        console.log(name);
         this.$store.dispatch('changeCity',name);
         this.$router.push('/');
       }
@@ -57,13 +57,15 @@
   };
 </script>
 
+
 <style scoped>
   .city_wrap>>>.mint-indexlist{
     position: static;
   }
-  .city_wrap {
-    position: relative;
-    top: 1.9rem;
+  .city_wrap{
+    position: fixed;
+    width: 100%;
+    top: 1.8rem;
   }
   .city {
     background: #eef;

@@ -26,7 +26,7 @@ export default {
     }
   },
   mounted () {
-  this.handleCities()
+  this.handleCities();
   },
   methods: {
     handleCities () {
@@ -44,7 +44,7 @@ export default {
 <style scoped>
 .list_wrap{
   width: 100%;
-  position: fixed;
+  position: relative;
   top:0;
   left: 0;
   z-index: 10;

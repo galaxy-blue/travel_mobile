@@ -5,38 +5,39 @@
       <span class="guess">猜你喜欢</span>
     </div>
     <ul class="rec_con">
-      <router-link class="list_con" v-for="item in recom_data" :key="item.id" :to="'./detail/'+item.id" tag="li">
+      <router-link class="list_con" v-for="item in recommendList" :key="item.id" :to="'/detail/'+item.id" tag="li">
         <div class="content_mas">
           <div class="img_wrap">
-            <img class="img_rec" :src="item.urlImg" alt="">
+            <img class="img_rec" :src="item.img" alt="">
           </div>
           <div class="content">
             <div class="site">
-              <span class="site_detail">{{item.site_detail}}</span>
+              <span class="site_detail">{{item.name}}</span>
               <div class="eva_box">
                 <i class="start_icon"></i>
-                <span class="evaluate">{{item.evaluate}}条评论</span>
+                <span class="evaluate">{{item.number}}条评论</span>
               </div>
             </div>
             <div class="price_box">
               <span class="price">
-                <em class="price_det">￥<i class="num">{{item.num}}</i></em>起
+                <em class="price_det">￥<i class="num">{{item.price}}</i></em>起
               </span>
-              <span class="pri_site">{{item.pri_site}}</span>
+              <span class="pri_site">{{item.area}}</span>
             </div>
           </div>
         </div>
-        <div class="comment">{{item.comment}}</div>
+        <div class="comment">{{item.describe}}</div>
       </router-link>
     </ul>
   </div>
 </template>
 
 <script>
-import recommend from '@/assets/images/recommend01.png'
+import recommend from "@/assets/images/recommend01.png";
 export default {
-  name:'recommend',
-  data () {
+  name: "recommend",
+  props: ["recommendList"]
+  /* data () {
     return{
       recom_data:[
         {
@@ -86,88 +87,88 @@ export default {
         }
       ]
     }
-  }
-}
+  } */
+};
 </script>
 
 <style scoped>
-.home_recommend{
-  margin-top: .2rem;
+.home_recommend {
+  margin-top: 0.2rem;
   background: #fff;
 }
-.title{
+.title {
   width: 100%;
-  line-height: .5rem;
-  padding:.24rem .2rem .26rem;
+  line-height: 0.5rem;
+  padding: 0.24rem 0.2rem 0.26rem;
 }
-.love{
+.love {
   display: inline-block;
-  width: .3rem;
-  height: .3rem;
-  background: #ccc;
+  width: 0.32rem;
+  height: 0.32rem;
+  background: url("../../../assets/images/love2.png");
 }
-.guess{
-  color:#212121;
-  font-size: .32rem;
-  margin-left: .1rem;
+.guess {
+  color: #212121;
+  font-size: 0.32rem;
+  margin-left: 0.1rem;
 }
-.rec_con{
+.rec_con {
   width: 100%;
-  padding:0 .2rem;
+  padding: 0 0.2rem;
 }
-.list_con{
- border-bottom: 1px solid #f5f5f5;
- padding:.2rem 0;
+.list_con {
+  border-bottom: 1px solid #f5f5f5;
+  padding: 0.2rem 0;
 }
-.content_mas{
+.content_mas {
   display: flex;
 }
-.img_wrap{
+.img_wrap {
   width: 2rem;
   height: 2rem;
 }
-.img_rec{
+.img_rec {
   width: 100%;
   height: 100%;
 }
-.content{
-  flex:1;
-  padding:0 .3rem;
+.content {
+  flex: 1;
+  padding: 0 0.3rem;
   box-sizing: border-box;
 }
-.site_detail{
-  padding:.26rem 0 .2rem;
+.site_detail {
+  padding: 0.26rem 0 0.2rem;
   display: block;
-  font-size: .32rem;
-  color:#212121;
+  font-size: 0.32rem;
+  color: #212121;
 }
-.start_icon{
+.start_icon {
   display: inline-block;
-  width: 1.5rem;
-  height: .28rem;
-  margin-right:.22rem;
-  background: #ccc;
+  width: 1.6rem;
+  height: 0.28rem;
+  margin-right: 0.22rem;
+  background: url("../../../assets/images/start.png");
 }
-.evaluate{
+.evaluate {
   color: #616161;
-  font-size: .24rem;
+  font-size: 0.24rem;
 }
-.price_box{
-  margin-top: .22rem;
-  color:#616161;
+.price_box {
+  margin-top: 0.22rem;
+  color: #616161;
   display: flex;
   justify-content: space-between;
 }
-.price_det{
-  color:#ff8300;
+.price_det {
+  color: #ff8300;
 }
-.num{
-  font-size: .4rem;
+.num {
+  font-size: 0.4rem;
 }
-.comment{
-  margin-top: .5rem;
+.comment {
+  margin-top: 0.5rem;
   margin-left: 2.3rem;
-  font-size: .24rem;
-  color:#f55;
+  font-size: 0.24rem;
+  color: #f55;
 }
 </style>

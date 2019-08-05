@@ -37,7 +37,7 @@ export default {
       if(scrollTop > 60){
         let opacity = scrollTop / 140;
         opacity = opacity < 1 ? opacity : 1;
-        this.opacityhandle.opacity=opacity;
+        this.opacityhandle.opacity = opacity;
         this.show = false
       }else{
         this.show = true

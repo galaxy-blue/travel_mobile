@@ -1,6 +1,6 @@
 <template>
   <div class="list_header">
-    <i class="back" @click="toback"></i>
+    <img src="@/assets/images/back.png" alt="" class="back_arrow" @click="toback">
     <h3 class="title">城市选择</h3>
   </div>
 </template>
@@ -26,19 +26,16 @@ export default {
   line-height:.88rem;
   text-align: center;
 }
-.back{
-  display:inline-block;
-  width: .4rem;
-  height:.4rem;
-  background:#ccc;
-  position: absolute;
-  left: .3rem;
-  top:.24rem;
-}
 .title{
   color:#fff;
   display:inline-block;
   font-weight: bold;
   font-size: .35rem;
+}
+.back_arrow{
+ width: .4rem;
+ position: absolute;
+ left: .3rem;
+ top:.24rem;
 }
 </style>
